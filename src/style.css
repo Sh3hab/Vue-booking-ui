@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+      -webkit-tap-highlight-color: transparent;
+        }
+          
+            body {
+                @apply bg-gradient-to-br from-gray-50 to-gray-100;
+                    touch-action: pan-y pinch-zoom;
+                      }
+                      }
+
+                      @layer components {
+                        /* تأثير الزجاج */
+                          .glass-card {
+                              @apply bg-white/70 backdrop-blur-md rounded-2xl shadow-lg border border-white/40;
+                                }
+                                  
+                                    .glass-column {
+                                        @apply bg-white/50 backdrop-blur-sm rounded-2xl p-4 min-w-[280px] 
+                                                   border border-white/30 shadow-md;
+                                                     }
+                                                       
+                                                         .glass-button {
+                                                             @apply bg-white/60 backdrop-blur-sm rounded-xl px-4 py-2 shadow-sm 
+                                                                        hover:bg-white/80 transition-all duration-200 
+                                                                                   border border-white/40 active:scale-95;
+                                                                                     }
+                                                                                       
+                                                                                         /* حاوية الجوال */
+                                                                                           .mobile-container {
+                                                                                               @apply max-w-[480px] mx-auto px-3 pb-24 min-h-screen relative;
+                                                                                                 }
+                                                                                                   
+                                                                                                     /* تمرير أفقي */
+                                                                                                       .horizontal-scroll {
+                                                                                                           @apply flex gap-4 overflow-x-auto pb-4 px-1;
+                                                                                                               scrollbar-width: thin;
+                                                                                                                   -webkit-overflow-scrolling: touch;
+                                                                                                                     }
+                                                                                                                       
+                                                                                                                         .horizontal-scroll::-webkit-scrollbar {
+                                                                                                                             height: 4px;
+                                                                                                                               }
+                                                                                                                                 
+                                                                                                                                   /* أنيميشن السلايد */
+                                                                                                                                     .slide-enter-active, .slide-leave-active {
+                                                                                                                                         transition: transform 0.3s ease;
+                                                                                                                                           }
+                                                                                                                                             .slide-enter-from, .slide-leave-to {
+                                                                                                                                                 transform: translateX(-100%);
+                                                                                                                                                   }
+                                                                                                                                                     
+                                                                                                                                                       .slide-right-enter-active, .slide-right-leave-active {
+                                                                                                                                                           transition: transform 0.3s ease;
+                                                                                                                                                             }
+                                                                                                                                                               .slide-right-enter-from, .slide-right-leave-to {
+                                                                                                                                                                   transform: translateX(100%);
+                                                                                                                                                                     }
+                                                                                                                                                                       
+                                                                                                                                                                         /* أنيميشن المودال */
+                                                                                                                                                                           .modal-enter-active, .modal-leave-active {
+                                                                                                                                                                               transition: opacity 0.25s ease;
+                                                                                                                                                                                 }
+                                                                                                                                                                                   .modal-enter-from, .modal-leave-to {
+                                                                                                                                                                                       opacity: 0;
+                                                                                                                                                                                         }
+                                                                                                                                                                                           .modal-content-enter-active {
+                                                                                                                                                                                               transition: transform 0.25s ease, opacity 0.25s ease;
+                                                                                                                                                                                                 }
+                                                                                                                                                                                                   .modal-content-leave-active {
+                                                                                                                                                                                                       transition: transform 0.2s ease, opacity 0.2s ease;
+                                                                                                                                                                                                         }
+                                                                                                                                                                                                           .modal-content-enter-from, .modal-content-leave-to {
+                                                                                                                                                                                                               transform: scale(0.95);
+                                                                                                                                                                                                                   opacity: 0;
+                                                                                                                                                                                                                     }
+                                                                                                                                                                                                                     }
